@@ -1,0 +1,9 @@
+<h1>Company's Benefits</h1>
+
+<ng2-smart-table
+  [settings]="settings"
+  [source]="data"
+  (deleteConfirm)="onDeleteConfirm($event)"
+  (editConfirm)="editConfirm($event)"
+  (createConfirm)="createConfirm($event)"
+></ng2-smart-table>

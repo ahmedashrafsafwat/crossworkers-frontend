@@ -1,0 +1,14 @@
+<h1>Employees List</h1>
+<div class="list-group">
+  <button
+    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+    *ngFor="let employee of employees; let i = index"
+    style="width: 100%"
+    (click)="createComponent(employee.username, employee._id)"
+  >
+    {{ employee.username }}
+    <span class="badge badge-success badge-pill">.</span>
+  </button>
+</div>
+
+<app-chat-box (close)="destroyComponent($event)" #chatContainer></app-chat-box>

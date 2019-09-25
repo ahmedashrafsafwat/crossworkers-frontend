@@ -1,0 +1,25 @@
+<div class="row justify-content-around">
+  <div class="col-12">
+    <div class="dashboard-card">
+      <h1>Company's Dashboard</h1>
+      <h3>Hello {{ currentUserName }} - {{ currentRole.toUpperCase() }}</h3>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="dashboard-card">
+      <app-log-table></app-log-table>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="dashboard-card">
+      <app-employee-list></app-employee-list>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="dashboard-card">
+      <h1>Add a new Employee</h1>
+      <app-register [addEmployee]="true"></app-register>
+    </div>
+  </div>
+  <div class="col-6"></div>
+</div>

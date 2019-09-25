@@ -1,0 +1,30 @@
+<div class="chatbox ">
+  <div class="chatbox__title">
+    <h5>
+      <a>{{ to }}</a>
+    </h5>
+    <button class="chatbox__title__close" (click)="closeChatBox()">
+      X
+    </button>
+  </div>
+  <div class="chatbox__body">
+    <div
+      *ngFor="let message of messages"
+      [ngClass]="
+        message.senderName == currentUserName
+          ? 'chatbox__body__message chatbox__body__message--left'
+          : 'chatbox__body__message chatbox__body__message--right'
+      "
+    >
+      <p>
+        <strong>{{ message.senderName }}: </strong>
+        {{ message.message }}
+      </p>
+    </div>
+  </div>
+  <textarea
+    class="chatbox__message"
+    placeholder="Enter Your Message..."
+    (keydown.enter)="sendMessage($event.target.value, toId)"
+  ></textarea>
+</div>
